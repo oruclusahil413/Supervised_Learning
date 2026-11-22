@@ -2,7 +2,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import random as random
 
-
 def compute_model_prediction(w, b, x_train):
     m = x_train.shape[0]
     f_wb = np.zeros(m)
@@ -14,9 +13,9 @@ m = 100
 w = 470
 b = 270
 
-fig,axes = plt.subplots(1,3,figsize=(20, 6))
+fig,axes = plt.subplots(1,2,figsize=(20, 6))
 
-for idx in range(3):
+for idx in range(2):
     x_train = np.zeros(m)
     y_train = np.zeros(m)
 
@@ -31,6 +30,7 @@ for idx in range(3):
 
     axes[idx].scatter(x_train, y_train, color="red", label="y_train")
     axes[idx].plot(x_train, prediction, color="blue", label="prediction")
+
     axes[idx].set_title(f"Dataset #{idx + 1}")
     axes[idx].set_xlabel("x_train")
     axes[idx].set_ylabel("y")
